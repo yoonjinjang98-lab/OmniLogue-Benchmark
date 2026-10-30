@@ -1,0 +1,6 @@
+{
+  "name": "bm25_rag",
+  "description": "Sparse retrieval baseline (family A, BASELINE_METRIC_PLAN.md §4): chunks the conversation by turn, indexes with BM25 (rank_bm25), retrieves the top-k turns for each question, and answers from just those instead of the full transcript. Comparison point for whether a real memory framework beats plain lexical retrieval.",
+  "author": "Wnsdnl",
+  "url": null
+}

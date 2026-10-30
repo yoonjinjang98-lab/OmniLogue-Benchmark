@@ -1,0 +1,20 @@
+{
+  "name": "ubuntu_irc_addressee",
+  "task_type": "retrieval",
+  "axes": [
+    "multiparty"
+  ],
+  "synthetic": false,
+  "n_parties": "N",
+  "has_timestamp": false,
+  "has_gold_addressee": true,
+  "has_gold_reply_to": true,
+  "has_persona_sentences": false,
+  "license": "Ubuntu Chat Corpus (Ouchi & Tsuboi 2016)",
+  "url": "https://github.com/hiroki13/response-ranking",
+  "tier": "A",
+  "notes": "Addressee-recognition view of ubuntu_irc's test split (same raw files, data/raw/ubuntu_irc/): pick which earlier speaker the next message is addressed to. Candidates = context speakers other than the responder.",
+  "extra_metrics": [
+    "addressee_accuracy"
+  ]
+}

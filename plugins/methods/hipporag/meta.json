@@ -1,0 +1,6 @@
+{
+  "name": "hipporag",
+  "description": "Wraps HippoRAG (OSU-NLP-Group/HippoRAG, MIT, family C, BASELINE_METRIC_PLAN.md §4): LLM-driven open information extraction (NER + triple extraction) builds a passage/entity/fact knowledge graph, queried via embedding similarity plus Personalized PageRank over the graph. Vendored (not pip-installed) since the current pip pre-release hard-requires the vllm package just to import, pinning old torch/transformers that would conflict with this repo's other baselines. Comparison point alongside mem0/langmem/a_mem/memoryos/zep for whether a real memory-agent/graph-RAG framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary).",
+  "author": "Wnsdnl",
+  "url": "https://github.com/OSU-NLP-Group/HippoRAG"
+}

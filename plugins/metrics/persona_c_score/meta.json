@@ -1,0 +1,6 @@
+{
+  "name": "persona_c_score",
+  "task_type": "dialogue",
+  "default": false,
+  "description": "C-score (Madotto et al. 2019), the persona-consistency number persona-dialogue papers report (e.g. PAL's C.score): an NLI classifier (FacebookAI/roberta-large-mnli, local GPU, free) labels (response, persona sentence) for every persona sentence in item.metadata['persona']; entailment +1, contradiction -1, neutral 0, summed per response and averaged. Classifier-based, so comparable to the literature in a way the LLM-judged persona_consistency is not. Opt in per dataset via extra_metrics."
+}

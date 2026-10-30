@@ -1,0 +1,6 @@
+{
+  "name": "paa",
+  "description": "Persona-Adaptive Attention (Huang et al., AAAI 2023) -- GPT2 encoder-decoder with gated persona/context cross-attention, trained on ConvAI2. Wraps https://github.com/hqsiswiliam/persona-adaptive-attention. NOT a prompted-LLM baseline; requires a locally trained checkpoint (checkpoint_path config) -- upstream ships no pretrained weights, only base GPT2 + train.py. See method.py docstring before use.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/hqsiswiliam/persona-adaptive-attention"
+}

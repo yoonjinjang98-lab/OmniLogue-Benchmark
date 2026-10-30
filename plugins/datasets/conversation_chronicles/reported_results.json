@@ -1,0 +1,55 @@
+{
+  "_note": "Published numbers transcribed for reference only (0-1 scale = paper % / 100). NOT comparable to our own runs unless the evaluation toolkit matches -- papers use coco-caption, nlg-eval or HF `evaluate`, and the same model is cited with different numbers across papers (e.g. SS-MPC METEOR is 10.92 in its own paper, 7.75 in DRCR's table). Re-run baselines in this harness for real comparisons.",
+  "_source": "LD-Agent (Li et al., NAACL 2025, arXiv 2406.05925) Table 1, tuned ChatGLM3-6B backbone, BLEU-2/BLEU-3/ROUGE-L per evaluated session 2..5 (nlg-eval). Table layout transcribed from HTML; verify against the PDF before citing.",
+  "metrics": [
+    "BLEU-2",
+    "BLEU-3",
+    "ROUGE-L"
+  ],
+  "results": {
+    "ChatGLM3-6B (LoRA-tuned)": {
+      "session_2": {
+        "BLEU-2": 0.1589,
+        "BLEU-3": 0.099,
+        "ROUGE-L": 0.3059
+      },
+      "session_3": {
+        "BLEU-2": 0.1597,
+        "BLEU-3": 0.1006,
+        "ROUGE-L": 0.3027
+      },
+      "session_4": {
+        "BLEU-2": 0.161,
+        "BLEU-3": 0.1031,
+        "ROUGE-L": 0.3054
+      },
+      "session_5": {
+        "BLEU-2": 0.151,
+        "BLEU-3": 0.0934,
+        "ROUGE-L": 0.2943
+      }
+    },
+    "ChatGLM3-6B + LD-Agent": {
+      "session_2": {
+        "BLEU-2": 0.2569,
+        "BLEU-3": 0.1953,
+        "ROUGE-L": 0.3967
+      },
+      "session_3": {
+        "BLEU-2": 0.2593,
+        "BLEU-3": 0.1972,
+        "ROUGE-L": 0.3915
+      },
+      "session_4": {
+        "BLEU-2": 0.2582,
+        "BLEU-3": 0.194,
+        "ROUGE-L": 0.3905
+      },
+      "session_5": {
+        "BLEU-2": 0.2426,
+        "BLEU-3": 0.1816,
+        "ROUGE-L": 0.3761
+      }
+    }
+  }
+}

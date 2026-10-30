@@ -1,0 +1,6 @@
+{
+  "name": "full_context",
+  "description": "Stuffs the entire conversation transcript into the prompt and asks the LLM the question directly -- no retrieval, no summarization. Cheapest possible baseline and the comparison floor every memory framework should beat; degrades once a conversation exceeds the model's context window.",
+  "author": "Wnsdnl",
+  "url": null
+}

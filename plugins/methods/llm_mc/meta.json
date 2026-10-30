@@ -1,0 +1,6 @@
+{
+  "name": "llm_mc",
+  "description": "Full-context multiple-choice baseline (personamem, any qa item with item.options): puts the whole conversation in the prompt, lists the options as lettered choices, and asks for the letter of the best one. Same context policy as full_context (family A), but answers in the A/B/C/D form mc_accuracy grades exactly instead of free text. Defaults to the free local google/gemma-4-31B-it.",
+  "author": "Wnsdnl",
+  "url": null
+}

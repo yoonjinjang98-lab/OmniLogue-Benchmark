@@ -1,0 +1,5 @@
+{
+  "name": "bleu_n",
+  "task_type": "dialogue",
+  "description": "Corpus-level BLEU-1/2/3/4 (nltk corpus_bleu, uniform n-gram weights up to n, no smoothing) over lowercased nltk word tokens -- the form multi-party generation papers (GSN, HeterMPC, MADNet on Ubuntu IRC) report, unlike `bleu`'s per-sentence sacrebleu average. Values in [0, 1]; multiply by 100 to compare with paper tables. Per-item score: smoothed sentence BLEU-4."
+}

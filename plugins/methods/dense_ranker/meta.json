@@ -1,0 +1,6 @@
+{
+  "name": "dense_ranker",
+  "description": "Dense response-selection baseline for task_type=retrieval (ubuntu_irc, mpchat): embeds the recent context and every candidate with a local sentence encoder (all-MiniLM-L6-v2 via dialogue_benchmarks.llm.embed, free) and ranks candidates by cosine similarity. The zero-shot bi-encoder counterpart to bm25_ranker; MPCHAT's own trained bi-encoders are the fine-tuned version of the same idea.",
+  "author": "Wnsdnl",
+  "url": null
+}

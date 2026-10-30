@@ -1,0 +1,17 @@
+{
+  "name": "molweni_dp",
+  "task_type": "discourse_parsing",
+  "axes": [
+    "multiparty"
+  ],
+  "synthetic": false,
+  "n_parties": "N",
+  "has_timestamp": false,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": true,
+  "has_persona_sentences": false,
+  "license": "research (HIT-SCIR)",
+  "url": "https://github.com/HIT-SCIR/Molweni",
+  "tier": "A",
+  "notes": "Discourse-parsing view of molweni's test split (same raw files, data/raw/molweni/): predict every (x, y, relation) edge of the EDU graph; scored by discourse_relation_f1."
+}

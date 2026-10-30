@@ -1,0 +1,19 @@
+{
+  "name": "evermembench",
+  "task_type": "qa",
+  "axes": [
+    "long",
+    "persona",
+    "multiparty"
+  ],
+  "synthetic": true,
+  "n_parties": "N",
+  "has_timestamp": true,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": true,
+  "license": "research (EverMind-AI)",
+  "url": "https://huggingface.co/datasets/EverMind-AI/EverMemBench-Dynamic",
+  "tier": "A",
+  "notes": "170 employees, 51023 turns, 4.2M tokens, ~1 year; 300-persona pool with role + 8-dim style vector; QA 2400 across 3 dims x 9 subtasks"
+}

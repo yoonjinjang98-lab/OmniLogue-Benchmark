@@ -1,0 +1,23 @@
+# data/ is a symlink to the shared HDD (DIALOGUE_BENCHMARKS_DATA) -- raw data, caches, and
+# results live there and are never committed. See CLAUDE.md.
+/data
+
+# other collaborators' git worktrees, created by scripts/worktrees.sh -- each
+# is a full nested checkout (own .git, .venv, data symlink); keeping this
+# ignored is also what makes rg/grep in this checkout skip them automatically.
+/worktrees
+
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.venv/
+*.pkl
+
+.env
+.env.*
+!.env.example
+!env.template
+
+# per-worktree local overrides
+.claude/settings.local.json

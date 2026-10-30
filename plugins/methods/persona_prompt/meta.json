@@ -1,0 +1,6 @@
+{
+  "name": "persona_prompt",
+  "description": "Prompted next-turn generation for task_type=dialogue (msc, personachat, conversation_chronicles): the speaker's persona sentences (item.metadata['persona']) + the dialogue history so far -> the next turn. For datasets whose conversation carries earlier sessions as `.sessions` (conversation_chronicles), those go in the prompt too as long-term memory. Paired with no_persona for the persona-prefix ablation BASELINE_METRIC_PLAN.md §2 calls the key personachat comparison. Defaults to the free local google/gemma-4-31B-it.",
+  "author": "Wnsdnl",
+  "url": null
+}

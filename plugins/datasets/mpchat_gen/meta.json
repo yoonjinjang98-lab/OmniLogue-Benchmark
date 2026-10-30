@@ -1,0 +1,21 @@
+{
+  "name": "mpchat_gen",
+  "task_type": "dialogue",
+  "axes": [
+    "persona",
+    "multiparty"
+  ],
+  "synthetic": false,
+  "n_parties": "N",
+  "has_timestamp": true,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": true,
+  "license": "research (Ahn et al., ACL 2023)",
+  "url": "https://github.com/ahnjaewoo/MPCHAT",
+  "tier": "A",
+  "notes": "Response-generation view of mpchat's NRP test instances (same raw files, data/raw/mpchat/): generate the main author's next message given context + persona post titles.",
+  "extra_metrics": [
+    "persona_c_score"
+  ]
+}

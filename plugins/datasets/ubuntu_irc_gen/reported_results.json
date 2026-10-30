@@ -1,0 +1,98 @@
+{
+  "_note": "Published numbers transcribed for reference only (0-1 scale = paper % / 100). NOT comparable to our own runs unless the evaluation toolkit matches -- papers use coco-caption, nlg-eval or HF `evaluate`, and the same model is cited with different numbers across papers (e.g. SS-MPC METEOR is 10.92 in its own paper, 7.75 in DRCR's table). Re-run baselines in this harness for real comparisons.",
+  "_source": "Cao, Li & Zhu, 'Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation' (DRCR), ACL 2026, arXiv 2604.06784, Table 1, Ubuntu IRC-19 (Hu et al. 2019 split = this dataset). Column alignment transcribed from the HTML table; verify against the PDF before citing.",
+  "metrics": [
+    "BLEU-1",
+    "BLEU-2",
+    "BLEU-3",
+    "BLEU-4",
+    "METEOR",
+    "ROUGE-L"
+  ],
+  "results": {
+    "GSN (Hu et al., IJCAI 2019)": {
+      "BLEU-1": 0.1023,
+      "BLEU-2": 0.0357,
+      "BLEU-3": 0.017,
+      "BLEU-4": 0.0097,
+      "METEOR": 0.041,
+      "ROUGE-L": 0.0991
+    },
+    "HeterMPC (Gu et al., ACL 2022)": {
+      "BLEU-1": 0.1226,
+      "BLEU-2": 0.048,
+      "BLEU-3": 0.0242,
+      "BLEU-4": 0.0149,
+      "METEOR": 0.0494,
+      "ROUGE-L": 0.112
+    },
+    "EMMDG (Li & Zhao, ACL 2023)": {
+      "BLEU-1": 0.1231,
+      "BLEU-2": 0.0539,
+      "BLEU-3": 0.0334,
+      "BLEU-4": 0.0245,
+      "METEOR": 0.0552,
+      "ROUGE-L": 0.1171
+    },
+    "MADNet (Gu et al., EMNLP 2023)": {
+      "BLEU-1": 0.1273,
+      "BLEU-2": 0.0512,
+      "BLEU-3": 0.0264,
+      "BLEU-4": 0.0163,
+      "METEOR": 0.0531,
+      "ROUGE-L": 0.1174
+    },
+    "RL-TRC (Fan et al., EMNLP 2024) [no public code]": {
+      "BLEU-1": 0.1366,
+      "BLEU-2": 0.0658,
+      "BLEU-3": 0.041,
+      "BLEU-4": 0.0293,
+      "METEOR": 0.062,
+      "ROUGE-L": 0.1272
+    },
+    "SS-MPC (Jang et al., 2025)": {
+      "BLEU-1": 0.156,
+      "BLEU-2": 0.0662,
+      "BLEU-3": 0.0367,
+      "BLEU-4": 0.0244,
+      "METEOR": 0.0775,
+      "ROUGE-L": 0.1244
+    },
+    "Llama-3.2-3B-Instruct + SFT": {
+      "BLEU-1": 0.1323,
+      "BLEU-2": 0.0587,
+      "BLEU-3": 0.0337,
+      "BLEU-4": 0.022,
+      "METEOR": 0.0602,
+      "ROUGE-L": 0.1194
+    },
+    "Qwen3-4B + SFT": {
+      "BLEU-1": 0.1348,
+      "BLEU-2": 0.0605,
+      "BLEU-3": 0.0354,
+      "BLEU-4": 0.0239,
+      "METEOR": 0.0614,
+      "ROUGE-L": 0.122
+    },
+    "Qwen3-8B + SFT": {
+      "BLEU-1": 0.1422,
+      "BLEU-2": 0.0653,
+      "BLEU-3": 0.0383,
+      "BLEU-4": 0.0252,
+      "METEOR": 0.0637,
+      "ROUGE-L": 0.1292
+    },
+    "DRCR (Qwen3-8B, ACL 2026) [no public code]": {
+      "BLEU-1": 0.1781,
+      "BLEU-2": 0.0802,
+      "BLEU-3": 0.0579,
+      "BLEU-4": 0.0426,
+      "METEOR": 0.0849,
+      "ROUGE-L": 0.1482
+    }
+  },
+  "not_tabulated": {
+    "MuPaS (Wang et al., IJCNN 2025, arXiv 2412.05342)": "multi-party SFT of LLMs; no public code found; reports on its own datasets",
+    "SA-LLM (Sun et al., arXiv 2503.08842)": "speaker-aware contrastive LLM tuning; evaluated on a different Ubuntu IRC release (Kadlec et al. 2015), numbers not comparable"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "sbys",
+  "description": "SBYS -- Score Before You Speak (Saggar, Darling, Dimitrova, Sarikaya, Hogg; ECAI 2025, \"Score Before You Speak: Improving Persona Consistency in Dialogue Generation using Response Quality Scores\", arXiv:2508.06886). Wraps https://github.com/arpita2512/score_before_you_speak: trains a dialogue model on (persona, context, response, response-quality-score) quadruples -- the score, appended as text after the last user turn during training (\"... Score: 0.62\"), tells the model how persona-consistent that particular response is. At generation time, requesting the maximum score (\"Score: 1.0\") conditions the model to produce its most persona-consistent completion. Unlike plugins/methods/paa/ltkm/orig, upstream released real pretrained checkpoints on the HuggingFace Hub (no local training needed) -- this Method defaults to Arpita1/sbs_personachat_dialogpt and is runnable out of the box. No LICENSE file exists in the source repo (confirmed via GitHub API) -- used here for internal reproduction only, same basis already agreed for plugins/methods/pathrag/orig and other license-gap cases this session.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/arpita2512/score_before_you_speak"
+}

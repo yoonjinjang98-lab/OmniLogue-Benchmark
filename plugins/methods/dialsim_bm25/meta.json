@@ -1,0 +1,6 @@
+{
+  "name": "dialsim_bm25",
+  "description": "Wraps DialSim's own BM25-RAG baseline (jiho283/DialSim, family D, BASELINE_METRIC_PLAN.md §4): ports the paper's default retrieval config (nltk-tokenized BM25 over whole-session documents, top-10) and its RAG_qa_prompt_multi_choice_structured.txt prompt verbatim (chatbot persona per show, mandatory (A)-(E) don't-know option), for faithful comparison against upstream's reported numbers rather than this repo's generic bm25_rag.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/jiho283/DialSim"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "REPLACE_ME",
+  "task_type": "qa",
+  "axes": ["long"],
+  "synthetic": false,
+  "n_parties": "2",
+  "has_timestamp": false,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": false,
+  "license": "REPLACE_ME",
+  "url": "REPLACE_ME",
+  "tier": "A",
+  "notes": "REPLACE_ME -- see BASELINE_METRIC_PLAN.md for the recommended task_type/baseline/metric for this dataset"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "mrr",
+  "task_type": "retrieval",
+  "description": "Mean reciprocal rank of the gold candidate (item.reference = its 0-based index in item.candidates). Prediction format: JSON list of candidate indices best-first; a partial ranking gives the gold candidate its expected rank among the unranked remainder."
+}

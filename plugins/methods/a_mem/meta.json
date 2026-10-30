@@ -1,0 +1,6 @@
+{
+  "name": "a_mem",
+  "description": "Wraps the a-mem PyPI package (WujiangXu/A-mem, \"A-MEM: Agentic Memory for LLM Agents\", NeurIPS 2025, family C, BASELINE_METRIC_PLAN.md §4): each ingested chunk becomes a Zettelkasten-style note with LLM-generated keywords/context/tags, embedded and stored in ChromaDB, with periodic LLM-driven evolution linking/updating existing notes. Answers retrieve via ChromaDB vector search over accumulated notes. Comparison point alongside mem0/langmem for whether a real memory-agent framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary).",
+  "author": "Wnsdnl",
+  "url": "https://github.com/WujiangXu/A-mem"
+}

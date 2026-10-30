@@ -1,0 +1,5 @@
+{
+  "name": "recall_at_k",
+  "task_type": "retrieval",
+  "description": "Response/candidate selection recall: is the gold candidate (item.reference = its 0-based index in item.candidates) ranked within the top k? Per-item score is R@1; the reported number is {R@1, R@2, R@5, R@10}. Prediction format: JSON list of candidate indices best-first (see dialogue_benchmarks/metrics/parsing.py)."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "langmem",
+  "description": "Wraps langchain-ai/langmem's create_memory_store_manager (family C, BASELINE_METRIC_PLAN.md §4): ingests the conversation chunk by chunk, letting the manager's LLM-driven tool-calling extraction decide insert/update/delete over a LangGraph-backed semantic memory store, then retrieves relevant memories per question via the store's own search. Comparison point alongside mem0 for whether a real memory-agent framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary).",
+  "author": "Wnsdnl",
+  "url": "https://github.com/langchain-ai/langmem"
+}

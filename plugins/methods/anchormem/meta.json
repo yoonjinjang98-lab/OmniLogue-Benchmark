@@ -1,0 +1,6 @@
+{
+  "name": "anchormem",
+  "description": "Wraps AnchorMem (RayNeo-AI-2025/AnchorMem, ACL 2026 Findings, arXiv:2604.17377, MIT, family C): LLM-extracted atomic Facts per chunk are embedding-clustered across chunks and LLM-summarized into higher-level Events, with dual-path retrieval matching both facts and events. Vendored (no PyPI package); built on the same src/ lineage as this repo's own hipporag plugin (identical BaseLLM/BaseEmbeddingModel factory contracts), so reuses hipporag/method.py's stub-module injection technique. Comparison point alongside mem0/a_mem/lightmem for whether a second-pass LLM summarization layer over extracted facts beats flat fact retrieval.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/RayNeo-AI-2025/AnchorMem"
+}

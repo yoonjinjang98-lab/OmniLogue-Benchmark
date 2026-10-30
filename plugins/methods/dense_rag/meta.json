@@ -1,0 +1,6 @@
+{
+  "name": "dense_rag",
+  "description": "Dense (embedding) retrieval baseline (family A, BASELINE_METRIC_PLAN.md §4): chunks the conversation by turn, embeds every chunk once via dialogue_benchmarks.llm.embed() (text-embedding-3-small by default), retrieves the top-k chunks by cosine similarity to the embedded question, and answers from just those. Comparison point against bm25_rag: does semantic similarity catch paraphrases/coreference that lexical matching misses?",
+  "author": "Wnsdnl",
+  "url": null
+}

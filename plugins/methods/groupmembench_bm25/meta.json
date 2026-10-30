@@ -1,0 +1,6 @@
+{
+  "name": "groupmembench_bm25",
+  "description": "Wraps groupmembench's own BM25 baseline (dataset-native, family D) instead of reimplementing generic BM25 -- same tokenizer/passage-formatting/agent-prompt as upstream so it reproduces their reported 'BM25 matches memory systems' result faithfully, while scoring is left to this repo's own qa_em/qa_f1/qa_llm_judge metrics rather than upstream's own gpt-5 judge loop.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/UCSB-NLP-Chang/GroupMemBench"
+}

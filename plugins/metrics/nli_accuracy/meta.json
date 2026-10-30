@@ -1,0 +1,5 @@
+{
+  "name": "nli_accuracy",
+  "task_type": "nli",
+  "description": "Label accuracy for premise/hypothesis classification (dnli). Normalizes label synonyms on both sides: entailment/positive/entail, contradiction/negative/contradict, neutral -- so a method may answer in either NLI or DNLI vocabulary."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "ss_mpc",
+  "description": "SS-MPC (Jang et al., 2025): multi-party response generation that encodes the reply-to / speaker / addressee structure as sequential special-token input to a plain BART (no graph encoder) -- encoder post-training on masked index/speaker tokens, then fine-tuning. The authors' own code is vendored and run unmodified by train.py; this method generates from the final checkpoint (max_length 50) on ubuntu_irc_gen. Needs pytorch-lightning + evaluate (ss_mpc extra) and a GPU.",
+  "author": "Wnsdnl",
+  "url": "https://arxiv.org/abs/2502.16920"
+}

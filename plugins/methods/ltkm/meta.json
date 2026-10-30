@@ -1,0 +1,6 @@
+{
+  "name": "ltkm",
+  "description": "Learning to Know Myself (Li et al., AAAI 2023) -- a two-stage coarse-to-fine persona-aware TRAINING framework (model-agnostic: applied to Per-Seq2Seq/Transformer/GPT2/DialoGPT in the paper), not a prompted-LLM baseline. Stage 1 (\"Learning to Know Myself\", coarse) augments training with LLM-free persona-aware Q/A pairs built via a DNLI-trained relation-extraction model + templates. Stage 2 (\"Learning to Avoid Misidentification\", fine) adds a contrastive loss over MLM-regenerated persona-inconsistent negative samples. No official code was ever released (confirmed via GitHub/arXiv search) -- everything here is an original implementation written from the paper's text, not a wrapped repo. Same tier as plugins/methods/paa: a real architecture and training pipeline exist and are smoke-tested end-to-end with tiny random-weight models, but nothing has been trained on real DNLI/ConvAI2/Persona-Chat/DuLeMon data yet -- `Method` requires a `checkpoint_path` from `train_stage2_fine.py`, none exists. See method.py's module docstring for the full pipeline and exactly what verification was/wasn't done.",
+  "author": "Wnsdnl",
+  "url": "https://ojs.aaai.org/index.php/AAAI/article/view/26545"
+}

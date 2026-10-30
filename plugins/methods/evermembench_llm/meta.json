@@ -1,0 +1,6 @@
+{
+  "name": "evermembench_llm",
+  "description": "Wraps evermembench's own 'LLM system' baseline (dataset-native, family D) -- full dialogue as context, no memory system -- using upstream's exact dialogue formatting, MC/open-ended prompts, and answer-letter parsing so it reproduces their reported LLM-only numbers faithfully. Scoring is left to this repo's own qa_em/qa_f1/qa_llm_judge metrics rather than upstream's own LLM-judge loop.",
+  "author": "Wnsdnl",
+  "url": "https://huggingface.co/datasets/EverMind-AI/EverMemBench-Dynamic"
+}

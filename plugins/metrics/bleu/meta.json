@@ -1,0 +1,5 @@
+{
+  "name": "bleu",
+  "task_type": "dialogue",
+  "description": "Sentence-level BLEU (sacrebleu.sentence_bleu, exp smoothing, effective order), scaled from sacrebleu's 0-100 range to [0, 1]."
+}

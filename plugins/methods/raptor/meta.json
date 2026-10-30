@@ -1,0 +1,6 @@
+{
+  "name": "raptor",
+  "description": "RAPTOR-style hierarchical summary tree baseline (family B, BASELINE_METRIC_PLAN.md §4): recursively clusters and summarizes the conversation into a multi-layer tree, then retrieves top-k nodes across all layers (leaf detail + high-level summary alike) by embedding cosine distance to answer a question. Vendors parthsarthi03/raptor's tree-building/retrieval logic, trimmed of its OpenAI-specific model classes and rewired onto dialogue_benchmarks.llm.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/parthsarthi03/raptor"
+}

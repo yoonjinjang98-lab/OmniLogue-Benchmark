@@ -1,0 +1,6 @@
+{
+  "name": "qa_llm_judge_gpt",
+  "task_type": "qa",
+  "default": false,
+  "description": "qa_llm_judge with an OpenAI judge (gpt-4o-mini, the judge LoCoMo/mem0-style evaluations use) instead of the local gemma -- identical prompt, 1.0/0.0 per item. Separate metric name so its cached scores never mix with the gemma judge's. Paid API (one call per item, logged to the usage ledger): pass explicitly via --metrics qa_llm_judge_gpt."
+}

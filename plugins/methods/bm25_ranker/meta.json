@@ -1,0 +1,6 @@
+{
+  "name": "bm25_ranker",
+  "description": "Lexical response-selection baseline for task_type=retrieval (ubuntu_irc, mpchat): ranks item.candidates by BM25 similarity to the recent context (last `context_turns` turns of item.metadata['history'], plus persona sentences when present). No LLM, no training -- the floor any learned or prompted ranker should beat. Emits a full JSON ranking (metrics/parsing.py format).",
+  "author": "Wnsdnl",
+  "url": null
+}

@@ -1,0 +1,6 @@
+{
+  "name": "engrama_score",
+  "task_type": "qa",
+  "default": false,
+  "description": "EngramaBench's own typed scorer (entity w/ alias table, date +-7d, number +-5%, set F1, short-span F1, abstain, insight), loaded at runtime from the benchmark's repo clone under data/raw/engramabench/ -- not vendored. Per-item score as the scorer defines it; the reported number is its {composite_score, per-family scores}. Only meaningful on engramabench (needs item.metadata['engrama_query']); opted in via that dataset's extra_metrics."
+}

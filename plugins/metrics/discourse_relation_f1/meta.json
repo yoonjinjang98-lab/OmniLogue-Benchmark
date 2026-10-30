@@ -1,0 +1,5 @@
+{
+  "name": "discourse_relation_f1",
+  "task_type": "discourse_parsing",
+  "description": "Discourse-parsing edge F1 (molweni_dp): per-dialogue F1 over predicted (x, y, relation) edges vs. gold. Reports micro-averaged {link_f1 (x->y attachment only), link_rel_f1 (attachment + relation type)}. Prediction format: JSON list of [x, y, type] triples, or one 'x y type' per line."
+}

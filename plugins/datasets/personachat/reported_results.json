@@ -1,0 +1,38 @@
+{
+  "_note": "Published numbers transcribed for reference only (0-1 scale = paper % / 100). NOT comparable to our own runs unless the evaluation toolkit matches -- papers use coco-caption, nlg-eval or HF `evaluate`, and the same model is cited with different numbers across papers (e.g. SS-MPC METEOR is 10.92 in its own paper, 7.75 in DRCR's table). Re-run baselines in this harness for real comparisons.",
+  "_source": "PAL (Persona-Aware Alignment Framework, arXiv 2511.10215), original PERSONA-CHAT test set; C.score from a RoBERTa NLI classifier (cf. our persona_c_score).",
+  "metrics": [
+    "BLEU-1",
+    "BLEU-2",
+    "ROUGE-L",
+    "C.score"
+  ],
+  "results": {
+    "PAL (GPT-2)": {
+      "BLEU-1": 0.1705,
+      "BLEU-2": 0.0877,
+      "ROUGE-L": 0.1666,
+      "C.score": 0.811
+    },
+    "PAL (Llama-3.1-8B, LoRA + DPO)": {
+      "BLEU-1": 0.2512,
+      "BLEU-2": 0.14,
+      "ROUGE-L": 0.2388,
+      "C.score": 0.909
+    },
+    "GPT-3.5 few-shot": {
+      "C.score": 0.884
+    }
+  },
+  "also_compared_in_source": [
+    "ORIG",
+    "CLV",
+    "LMEDR",
+    "SimOAP",
+    "SPT",
+    "DialoGPT",
+    "Llama-3.1-8B",
+    "GPT-4o-mini",
+    "Gemini Flash"
+  ]
+}

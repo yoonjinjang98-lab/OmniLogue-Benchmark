@@ -1,0 +1,6 @@
+{
+  "name": "addressee_accuracy",
+  "task_type": "retrieval",
+  "default": false,
+  "description": "Addressee recognition accuracy (ubuntu_irc_addressee): item.candidates are the earlier speakers, item.reference the 0-based index of the one the response is addressed to. Prediction may be an index, a ranking, or the speaker label itself. Opt in via meta.json extra_metrics."
+}

@@ -1,0 +1,22 @@
+{
+  "name": "engramabench",
+  "task_type": "qa",
+  "extra_metrics": [
+    "abstention_accuracy",
+    "engrama_score"
+  ],
+  "axes": [
+    "long",
+    "persona"
+  ],
+  "synthetic": true,
+  "n_parties": "2",
+  "has_timestamp": true,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": true,
+  "license": "MIT (Acuña / Kalitea 2026)",
+  "url": "https://github.com/julianacunadc/engramabench",
+  "tier": "A",
+  "notes": "5 personas x 20 timestamped user-assistant conversations organized into thematic 'spaces'; 150 queries over 5 task families (single_space, cross_space, temporal_cross_space, adversarial abstention, emergent_insight). Ships its own typed scorer (entity/date/number/set/abstain/insight) -- wrapped as the engrama_score metric. Raw: data/raw/engramabench/repo (git clone)."
+}

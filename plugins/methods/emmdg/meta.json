@@ -1,0 +1,6 @@
+{
+  "name": "emmdg",
+  "description": "EMMDG (Li & Zhao, ACL 2023, github.com/EricLee8/MPDRG): BART-base EM-pre-trained to infer missing addressees, fine-tuned on Ubuntu IRC with addressee-indicator embeddings (15 epochs, lr 4e-5, beam 4). The released pre-trained checkpoint and the authors' training/inference code are used as-is (vendor/mpdrg, running on the renamed transformers 4.51 snapshot memalpha vendors; patches noted in place). For ubuntu_irc_gen. Needs the emmdg extra, the downloaded checkpoint, and a GPU.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/EricLee8/MPDRG"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "no_persona",
+  "description": "Ablation of persona_prompt with the persona sentences removed (history and any earlier-session memory kept) -- the 'no-persona' half of the persona-prefix ablation BASELINE_METRIC_PLAN.md §2 names as the key personachat/msc comparison. Same model and prompt otherwise.",
+  "author": "Wnsdnl",
+  "url": null
+}

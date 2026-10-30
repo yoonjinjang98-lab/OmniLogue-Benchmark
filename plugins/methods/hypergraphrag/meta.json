@@ -1,0 +1,6 @@
+{
+  "name": "hypergraphrag",
+  "description": "Wraps HyperGraphRAG (LHRLAB/HyperGraphRAG, NeurIPS 2025, family C, BASELINE_METRIC_PLAN.md §4): LLM-driven extraction of n-ary \"hyperedges\" (a knowledge-segment sentence linking every entity it mentions, not just a binary source/target pair like graphrag/lightrag/hipporag) into a knowledge hypergraph, answered via hybrid vector search over both entities and hyperedges. Comparison point alongside mem0/langmem/a_mem/memoryos/zep/hipporag/hypermem/graphrag/lightrag for whether a graph-RAG framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary); the direct comparison is against graphrag/lightrag/hipporag, since all four build an LLM-extracted graph over the conversation, but only HyperGraphRAG represents relations as hyperedges over an arbitrary number of entities instead of binary edges.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/LHRLAB/HyperGraphRAG"
+}

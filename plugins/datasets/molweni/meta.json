@@ -1,0 +1,20 @@
+{
+  "name": "molweni",
+  "task_type": "qa",
+  "axes": [
+    "multiparty"
+  ],
+  "synthetic": false,
+  "n_parties": "N",
+  "has_timestamp": false,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": true,
+  "has_persona_sentences": false,
+  "license": "research (HIT-SCIR)",
+  "url": "https://github.com/HIT-SCIR/Molweni",
+  "tier": "A",
+  "notes": "9754 dialogues from Ubuntu Chat Corpus; 78245 discourse-relation edges (edus/relations) -- direct gold labels for discourse-graph edges; also has MRC QA",
+  "extra_metrics": [
+    "abstention_accuracy"
+  ]
+}

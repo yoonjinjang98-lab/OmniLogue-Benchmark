@@ -1,0 +1,5 @@
+{
+  "name": "rouge_l",
+  "task_type": "dialogue",
+  "description": "ROUGE-L F-measure (longest common subsequence) via google/rouge_score, with stemming. Range [0, 1]."
+}

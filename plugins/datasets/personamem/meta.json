@@ -1,0 +1,21 @@
+{
+  "name": "personamem",
+  "task_type": "qa",
+  "extra_metrics": [
+    "mc_accuracy"
+  ],
+  "axes": [
+    "long",
+    "persona"
+  ],
+  "synthetic": true,
+  "n_parties": "2",
+  "has_timestamp": false,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": true,
+  "license": "research (Jiang et al., COLM 2025 / v2)",
+  "url": "https://huggingface.co/datasets/bowen-upenn/PersonaMem-v2",
+  "tier": "A",
+  "notes": "1000 personas, 26100 preferences, up to 60 sessions; tests tracking of evolving user preferences over time [meta corrected against actual adapter output via scripts/05_dataset_report.py]"
+}

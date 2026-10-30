@@ -1,0 +1,17 @@
+{
+  "name": "locomo",
+  "task_type": "qa",
+  "axes": [
+    "long"
+  ],
+  "synthetic": false,
+  "n_parties": "2",
+  "has_timestamp": true,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": false,
+  "license": "MIT (snap-research/locomo)",
+  "url": "https://snap-research.github.io/locomo/",
+  "tier": "A",
+  "notes": "10 conversations, ~300 turns, up to 35 sessions; QA 1986 across 5 categories"
+}

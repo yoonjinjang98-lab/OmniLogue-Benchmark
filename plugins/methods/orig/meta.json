@@ -1,0 +1,6 @@
+{
+  "name": "orig",
+  "description": "ORIG -- Order-Insensitive Representation Regularization (Chen, Wang, Deng, Kwan, Wang, Wong; ACL 2023 Findings, \"Towards Robust Personalized Dialogue Generation via Order-Insensitive Representation Regularization\", arXiv:2305.12782). Wraps https://github.com/ChanLiang/ORIG: fine-tunes DialoGPT with an added KL-divergence consistency loss between two differently-ordered views of the same persona sentence set, so the model's next-token distribution stops depending on which order the persona sentences happen to be listed in. NOT a prompted-LLM baseline; requires a locally trained checkpoint (checkpoint_path config) -- upstream ships no pretrained weights, only a training script (persona_train_kl.py) to fine-tune your own from base DialoGPT. No LICENSE file exists in the source repo (confirmed via GitHub API) -- used here for internal reproduction only, same basis already agreed for plugins/methods/pathrag and other license-gap cases this session. See method.py's module docstring before use.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/ChanLiang/ORIG"
+}

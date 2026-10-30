@@ -1,0 +1,6 @@
+{
+  "name": "lightrag",
+  "description": "Wraps HKUDS's LightRAG (HKUDS/LightRAG, family C, BASELINE_METRIC_PLAN.md §4): LLM-driven entity/relationship extraction into a knowledge graph, answered via a configurable retrieval mode (local/global/hybrid/naive/mix -- default \"mix\", combining graph traversal with vector retrieval over text chunks). Comparison point alongside mem0/langmem/a_mem/memoryos/zep/hipporag/hypermem/graphrag for whether a graph-RAG framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary); the most direct comparison is against `graphrag`, since both build an LLM-extracted knowledge graph, but LightRAG's own vector+graph \"mix\" retrieval never builds GraphRAG's community-report hierarchy.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/HKUDS/LightRAG"
+}

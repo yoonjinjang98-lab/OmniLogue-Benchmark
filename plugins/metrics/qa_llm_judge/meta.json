@@ -1,0 +1,6 @@
+{
+  "name": "qa_llm_judge",
+  "task_type": "qa",
+  "default": false,
+  "description": "LLM-as-judge correctness for free-form QA: asks a cheap model whether the prediction is semantically equivalent to the reference, 1.0/0.0. Use where token-F1 (qa_em/qa_f1) underscores correct free-form answers (locomo, dialsim, groupmembench, evermembench). Not a default metric -- costs one real LLM call per item, so pass it explicitly via `--metrics qa_llm_judge` (needs an API key configured)."
+}

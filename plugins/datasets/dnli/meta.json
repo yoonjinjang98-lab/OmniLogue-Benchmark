@@ -1,0 +1,17 @@
+{
+  "name": "dnli",
+  "task_type": "nli",
+  "axes": [
+    "persona"
+  ],
+  "synthetic": false,
+  "n_parties": "2",
+  "has_timestamp": false,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": false,
+  "license": "research (PersonaChat derivative)",
+  "url": "https://wellecks.com/dialogue_nli/",
+  "tier": "A",
+  "notes": "premise/hypothesis NLI pairs derived from PersonaChat; used as a persona-consistency metric resource, not loaded as Conversation"
+}

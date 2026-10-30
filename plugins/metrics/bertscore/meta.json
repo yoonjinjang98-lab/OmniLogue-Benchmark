@@ -1,0 +1,5 @@
+{
+  "name": "bertscore",
+  "task_type": "dialogue",
+  "description": "BERTScore F1 (Zhang et al. 2020) via the bert-score package, default English model (roberta-large), rescaled against bert-score's bundled human-correlation baseline for interpretability (Zhang et al.'s own recommendation -- raw BERTScore F1 clusters near 0.85-1.0 even for unrelated sentences and isn't discriminative). Rescaled score is usually in [0, 1] but can dip slightly negative for very dissimilar pairs -- it's not a hard bound like qa_em/qa_f1. First use downloads the model checkpoint (~1.4GB) from huggingface -- slow to score many items (one forward pass per item), prefer --limit for smoke tests."
+}

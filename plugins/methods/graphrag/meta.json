@@ -1,0 +1,6 @@
+{
+  "name": "graphrag",
+  "description": "Wraps Microsoft's GraphRAG (microsoft/graphrag, family C, BASELINE_METRIC_PLAN.md §4): LLM-driven entity/relationship extraction into a knowledge graph, Leiden community detection over that graph, LLM-generated community reports at each hierarchy level, then local search (entity-anchored hybrid retrieval over the graph + reports) or global search (map-reduce over community reports) to answer. Comparison point alongside mem0/langmem/a_mem/memoryos/zep/hipporag/hypermem for whether a graph-RAG framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary).",
+  "author": "Wnsdnl",
+  "url": "https://github.com/microsoft/graphrag"
+}

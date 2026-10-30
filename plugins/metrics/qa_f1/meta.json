@@ -1,0 +1,5 @@
+{
+  "name": "qa_f1",
+  "task_type": "qa",
+  "description": "Token-overlap F1 after normalization (lowercase, strip punctuation/articles, collapse whitespace)."
+}

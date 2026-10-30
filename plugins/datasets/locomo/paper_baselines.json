@@ -1,0 +1,31 @@
+{
+  "a_mem": {
+    "citation": "A-MEM: Agentic Memory for LLM Agents (NeurIPS 2025), arXiv:2502.12110, Table 1",
+    "model": "gpt-4o-mini",
+    "category_labels": {
+      "1": "single_hop",
+      "2": "multi_hop",
+      "3": "temporal",
+      "4": "open_domain",
+      "5": "adversarial"
+    },
+    "metrics": {
+      "qa_f1": {
+        "1": 0.4665,
+        "2": 0.2702,
+        "3": 0.4585,
+        "4": 0.1214,
+        "5": 0.5003
+      }
+    }
+  },
+  "hipporag": {
+    "citation": "REMem (ICLR 2026), arXiv:2602.13530, Table 3 -- HippoRAG 2 reproduced as a comparison baseline, not from HippoRAG's own paper (which never evaluates on LoCoMo)",
+    "model": "gpt-4.1-mini-2025-04-14 + nvidia/NV-Embed-v2, top-10 retrieval",
+    "note": "Table 3 reports one overall number per metric on the same 1,986-query full LoCoMo set (n_items matches our run.json) -- no per-category breakdown, so this only has an 'aggregate' entry, not 'metrics'. qa_em isn't reported by this paper either.",
+    "aggregate": {
+      "qa_f1": 0.390,
+      "qa_llm_judge": 0.740
+    }
+  }
+}

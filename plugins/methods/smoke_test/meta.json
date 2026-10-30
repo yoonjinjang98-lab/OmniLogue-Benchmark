@@ -1,0 +1,6 @@
+{
+  "name": "smoke_test",
+  "description": "Trivial no-memory baseline used only to verify the evaluate() pipeline wiring end-to-end. Not a real comparison baseline -- excluded unless explicitly requested.",
+  "author": "system",
+  "url": null
+}

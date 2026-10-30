@@ -1,0 +1,6 @@
+{
+  "name": "addressee_last_speaker",
+  "description": "Heuristic addressee-recognition baseline (ubuntu_irc_addressee): predicts that the next message is addressed to the most recent other speaker in the context, ranking the remaining candidates by recency. The standard 'previous speaker' baseline from Ouchi & Tsuboi (2016); no model at all.",
+  "author": "Wnsdnl",
+  "url": null
+}

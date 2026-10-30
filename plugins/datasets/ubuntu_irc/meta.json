@@ -1,0 +1,17 @@
+{
+  "name": "ubuntu_irc",
+  "task_type": "retrieval",
+  "axes": [
+    "multiparty"
+  ],
+  "synthetic": false,
+  "n_parties": "N",
+  "has_timestamp": false,
+  "has_gold_addressee": true,
+  "has_gold_reply_to": true,
+  "has_persona_sentences": false,
+  "license": "Ubuntu Chat Corpus (Ouchi & Tsuboi 2016)",
+  "url": "https://github.com/hiroki13/response-ranking",
+  "tier": "A",
+  "notes": "addressee recognition + response selection; session lengths 5/10/15; relation_at gives gold reply structure"
+}

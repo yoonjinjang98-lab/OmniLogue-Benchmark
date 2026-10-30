@@ -1,0 +1,6 @@
+{
+  "name": "llm_nli",
+  "description": "Prompted LLM NLI baseline for dnli (task_type=nli): asks the model whether the premise persona sentence/utterance entails, contradicts, or is neutral to the hypothesis; scored by nli_accuracy. The zero-shot counterpart to a DNLI-fine-tuned classifier. Defaults to the free local google/gemma-4-31B-it.",
+  "author": "Wnsdnl",
+  "url": null
+}

@@ -1,0 +1,225 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dialogue-benchmarks"
+version = "1.1.1"
+description = "OmniLogue Benchmark: a plugin-based benchmark harness for long-term, persona and multi-party dialogue AI"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+# pandas+pyarrow: required by plugins/datasets/personachat/adapter.py (reads a
+# parquet file). Was previously satisfied only by accident, via whatever the
+# shared conda base env happened to have installed -- add here whenever a new
+# adapter/method/metric needs a real dependency, so a bare venv works too.
+dependencies = ["pandas", "pyarrow", "sacrebleu", "rouge_score", "nltk", "bert-score", "rank_bm25"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+# scripts/export_source_pdf.py: renders the source-code copy for the program
+# copyright registration (no system PDF engine on the lab machines).
+registration = ["reportlab>=4"]
+# plugins/methods/llm_sft (LoRA SFT of Qwen3 / Llama-3.x -- the 2025-26 papers'
+# standard "LLM + SFT" baseline for multi-party, long-term and persona
+# generation alike) and plugins/methods/pal (same LoRA stack + DPO via trl).
+sft = ["peft", "accelerate"]
+pal = ["peft", "accelerate", "trl"]
+# plugins/methods/ld_agent: LD-Agent's topic retrieval keys memories by spaCy
+# noun lemmas (en_core_web_sm, pinned to the installed spaCy's 3.8 line).
+ld_agent = [
+    "spacy>=3.8,<3.9",
+    "en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
+]
+# plugins/methods/emmdg: its released pre-trained checkpoint is on Google Drive;
+# the vendored training script scores with coco-caption + py-rouge (which needs
+# pkg_resources, gone from setuptools >= 81).
+emmdg = ["gdown", "pycocoevalcap", "py-rouge", "setuptools<81"]
+# plugins/methods/ss_mpc: the vendored SS-MPC training code (Lightning + HF evaluate).
+ss_mpc = ["pytorch-lightning", "evaluate"]
+# sentence-transformers backs llm.embed()'s local all-MiniLM-L6-v2 provider
+# (plugins/methods/a_mem, plugins/methods/memoryos's real paper defaults).
+llm = ["anthropic", "openai", "sentence-transformers"]
+# plugins/methods/paa: vendors a 2023-era (transformers==4.9.2) hand-patched GPT2
+# decoder. Actually training this (2026-09-14) found the real compatibility
+# issue wasn't the file_utils/model_parallel_utils imports this comment used to
+# warn about (those import fine against modern transformers) -- it was 3 calls
+# to add_code_sample_docstrings() with a since-removed kwarg, purely cosmetic
+# Sphinx docstring decorators with zero runtime effect, deleted at vendor time
+# instead. So no transformers upper pin needed after all: runs fine against
+# whatever modern transformers this shared venv already has for hipporag/
+# graphrag/etc. Heavy + baseline-specific, so kept out of core `dependencies`.
+paa = ["torch", "dotmap", "termcolor", "tqdm", "pyyaml"]
+# plugins/methods/raptor: vendors parthsarthi03/raptor's tree-building/retrieval
+# logic (clustering + tokenization), trimmed of its OpenAI-specific model classes.
+# umap-learn/scikit-learn/scipy for clustering, tiktoken for chunk/token counting --
+# heavy + raptor-specific, so kept out of core `dependencies`.
+raptor = ["tiktoken", "umap-learn", "scikit-learn", "scipy", "numpy"]
+# plugins/methods/mem0: mem0ai's Memory API, backed by its local on-disk Qdrant
+# vector store (qdrant-client comes in as mem0ai's own dependency).
+mem0 = ["mem0ai"]
+# plugins/methods/langmem: langchain-ai/langmem's memory-store manager, plus
+# the langchain-core/langgraph pieces it needs (BaseChatModel, InMemoryStore).
+langmem = ["langmem"]
+# plugins/methods/a_mem: the `a-mem` PyPI package (imports as `agentic_memory`).
+# agentic_memory's OWN SentenceTransformer instantiation is never invoked (see
+# method.py) -- it's imported unconditionally at module load time regardless.
+# The identical model (all-MiniLM-L6-v2, a-mem's real paper default) does run,
+# just via dialogue_benchmarks.llm.embed()'s own local provider instead (see
+# llm.py's `llm` extra, which is what actually pulls in sentence-transformers
+# now -- not this extra).
+a_mem = ["a-mem"]
+# plugins/methods/memoryos: `memoryos-pro` (imports as `memoryos`) -- NOT the
+# `memoryos` PyPI package, an unrelated squatted name, see method.py docstring.
+# memoryos-pro itself is deliberately NOT listed here: its own pin
+# numpy==1.24.* doesn't build on Python 3.13, and it pins faiss-gpu (CUDA-only)
+# instead of faiss-cpu -- letting a normal resolve see it breaks the whole
+# install. Its OWN openai/sentence-transformers calls are never actually
+# reached either (method.py monkeypatches around both) -- the same
+# all-MiniLM-L6-v2 model (memoryos-pro's real paper default) runs instead via
+# dialogue_benchmarks.llm.embed()'s local provider (see llm.py's `llm`
+# extra) -- so any working version of the four packages below satisfies its
+# imports. Install faiss-cpu/sentence-transformers/numpy/openai the normal
+# way (`pip install -e '.[memoryos]'`),
+# then memoryos-pro separately, bypassing its own broken pins:
+#   .venv/bin/pip install --no-deps memoryos-pro
+memoryos = ["faiss-cpu", "sentence-transformers", "numpy", "openai"]
+# plugins/methods/dialsim_bm25: ports DialSim's own BM25 baseline tokenizer
+# (nltk.word_tokenize) verbatim. Needs the "punkt"/"punkt_tab" NLTK data
+# downloaded once (`python -c "import nltk; nltk.download('punkt_tab')"`) --
+# already present in this environment's ~/nltk_data.
+dialsim_bm25 = ["nltk"]
+# plugins/methods/zep: graphiti-core (the open engine behind Zep), backed by
+# its embedded Kuzu graph driver (kuzu -- no external server needed, unlike
+# graphiti-core's Neo4j/FalkorDB alternatives). Note: graphiti-core marks the
+# Kuzu driver deprecated upstream (unmaintained kuzu project) -- still works,
+# used here specifically to avoid needing a real graph-database server.
+zep = ["graphiti-core", "kuzu"]
+# plugins/methods/hipporag: vendored HippoRAG (vendor/hipporag/, MIT -- see
+# vendor/LICENSE.txt), trimmed of its vllm-only offline-inference path and
+# GritLM embedding backend (both removed at vendor time, see method.py's
+# module docstring for why: the real pip package hard-requires vllm just to
+# import, pinning old torch/transformers that would conflict with this
+# repo's other baselines). python-igraph/tiktoken/litellm/boto3/filelock/
+# tenacity/packaging are what the *remaining* vendored code needs to import
+# successfully -- method.py always overrides hipporag's own embedding
+# factory (NVEmbedV2/Contriever, kept for import-compat only) before it's
+# used. torch/datasets/einops are separate: they're what nvidia/
+# NV-Embed-v2's own HF modeling code (trust_remote_code=True) needs at
+# *load* time, for dialogue_benchmarks.llm.embed()'s own direct
+# transformers.AutoModel instance (not the vendored HippoRAG code, and not
+# sentence-transformers either -- see llm.py's _call_nvembed_direct
+# docstring for why). transformers is pinned to 4.46.3 specifically: newer
+# transformers' internal RoPE/cache/tied-weights refactor breaks
+# NV-Embed-v2's modeling code in ways dialogue_benchmarks.llm's _patch_*
+# functions only partly cover (they're version-gated to a no-op below 5.0,
+# since 4.46.3 predates all of that and doesn't need them); 4.46.3 was
+# chosen over the paper's own recommended 4.42.4 because its tokenizers pin
+# has a prebuilt Python 3.13 wheel where 4.42.4's needs a Rust build that
+# doesn't support 3.13 at all. Conflicts with plugins/methods/paa's own
+# transformers<4.31 pin if that extra is ever installed alongside this one
+# in the same venv -- not currently the case here.
+hipporag = ["torch", "transformers==4.46.3", "python-igraph", "tiktoken", "litellm", "boto3", "filelock", "tenacity", "packaging", "datasets", "einops"]
+# plugins/methods/hypermem: vendored HyperMem (vendor/hypermem/, Apache-2.0 --
+# see vendor/LICENSE.txt). No PyPI package exists; torch is needed only
+# because stage3's own top-level imports pull it in even though this method
+# never uses its local-model embedding path (see method.py's module docstring).
+hypermem = ["rank_bm25", "nltk", "rich", "python-dotenv", "json-repair", "torch", "numpy", "pandas"]
+# plugins/methods/graphrag: Microsoft's GraphRAG, pip-installable as-is (no
+# vendoring, unlike hipporag/hypermem -- see method.py's module docstring).
+# Pulls in graphrag_llm/graphrag_storage/graphrag_vectors/graphrag_input/
+# graphrag_chunking/graphrag_common as its own dependencies, plus spacy/
+# graspologic-native/lancedb for the noun-phrase/community-detection/
+# vector-store steps of its indexing pipeline (all local, no external
+# service -- lancedb is embedded/file-based, same pattern as mem0's Qdrant,
+# a_mem's Chroma, zep/hipporag's Kuzu). Installing this downgrades nltk and
+# litellm to whatever this pin resolves to -- checked `db validate` + the
+# full pytest suite still pass afterward (nltk is only ever used for
+# tokenization by dialsim_bm25/hypermem, litellm only for hipporag's
+# import-time type hints).
+graphrag = ["graphrag"]
+# plugins/methods/lightrag: HKUDS's LightRAG, pip-installable as `lightrag-hku`
+# (imports as `lightrag`). No vendoring, no ABC/factory-registration API to
+# hook -- its LLM/embedding seam is two plain functions
+# (`llm_model_func`/`EmbeddingFunc.func`), the simplest provider seam of any
+# family-C baseline here. All storage is local file-based by default
+# (JsonKVStorage/NanoVectorDBStorage/NetworkXStorage -- pure Python/JSON/
+# networkx, not even an embedded database process). Installing this bumps
+# `protobuf` past what `mem0ai`/`grpcio-tools` request and `opentelemetry-api`
+# past what other installed packages request -- pip's resolver warns about
+# both, but re-checked `db validate` + the full pytest suite + an actual
+# mocked mem0 add/search round-trip (protobuf's the one that could plausibly
+# break something at runtime, via qdrant-client) all still pass.
+lightrag = ["lightrag-hku"]
+# plugins/methods/hypergraphrag: vendored HyperGraphRAG (vendor/hypergraphrag/,
+# MIT -- see vendor/LICENSE.txt). No PyPI package exists. Unlike hipporag's
+# vendoring, nothing needed trimming -- its non-default storage backends
+# (Neo4j/Oracle/Milvus/MongoDB/TiDB/Chroma) are already behind the library's
+# own lazy_external_import() helper and never actually import unless one of
+# those backends is instantiated, and this method always uses the (also
+# upstream default) local JsonKVStorage/NanoVectorDBStorage/NetworkXStorage
+# instead. torch/transformers (needed by its llm.py's reference providers,
+# never called -- see method.py) are already installed for hipporag/paa;
+# ollama/aioboto3 are the two genuinely missing imports, both lightweight
+# clients with no version-pinning conflicts.
+hypergraphrag = ["ollama", "aioboto3"]
+# plugins/methods/pathrag: vendored PathRAG (vendor/pathrag/, no LICENSE file
+# in the source repo despite its README's MIT claim -- used for internal
+# reproduction only, see method.py's module docstring). Same LightRAG-derived
+# lineage/lazy_external_import() pattern as hypergraphrag, so the same heavy
+# non-default storage backends never import; ollama/aioboto3 already covers
+# what its llm.py needs beyond torch/transformers (already installed). Two
+# more of its llm.py's unconditional reference-provider imports --
+# `modelscope` and `from vllm import LLM` -- were removed at vendor time
+# instead of installed (vllm pins old torch/transformers that would conflict
+# with hipporag's pins in this shared venv, modelscope is simply unused).
+pathrag = ["ollama", "aioboto3"]
+# plugins/methods/ltkm: original implementation of "Learning to Know Myself"
+# (AAAI 2023, no official code released -- see method.py's module docstring).
+# torch/transformers already installed for hipporag/paa. spacy is needed for
+# question_construction.py's subject-entity extraction (dependency parsing);
+# it's already installed as graphrag's own dependency, but its English model
+# is a separate download, not a pip package:
+#   .venv/bin/python -m spacy download en_core_web_sm
+ltkm = ["spacy"]
+# plugins/methods/bob: vendored BoB (vendor/xlibs/, a renamed snapshot of
+# transformers==3.5.1, Apache-2.0 -- see vendor/LICENSE.txt). torch/
+# transformers already installed for hipporag/paa; sacremoses is the one
+# genuinely missing import (xlibs's tokenization_xlm.py needs it, even
+# though this method never uses XLM tokenization -- see method.py's
+# module docstring for what else was trimmed/patched at vendor time).
+bob = ["sacremoses"]
+# plugins/methods/memalpha: vendored Mem-alpha (vendor/agent.py + memory.py +
+# functions.py, no LICENSE file in the source repo despite its README's
+# Apache-2.0 claim -- used for internal reproduction only, see method.py's
+# module docstring). torch/rank_bm25/scikit-learn/tiktoken/nltk/json_repair/
+# python-dotenv already installed for other baselines. qwen-agent is the one
+# genuinely missing import (agent.py's Qwen3 function-call prompt
+# formatting) -- its own __init__.py eagerly imports a chain ending in
+# `import soundfile`, an unrelated audio dependency this Method never
+# touches, so soundfile is installed too rather than trimmed (a manylinux
+# wheel bundles libsndfile, no system package needed). Also vendors a
+# renamed transformers==4.51.3 snapshot (vendor/xlibs_memalpha/) since the
+# real checkpoint's `qwen3` architecture needs transformers>=4.51, which
+# conflicts with hipporag's real transformers==4.46.3 pin in this shared
+# venv -- same precedent as bob/lmedr's renamed vendored transformers
+# copies, chosen over bumping the shared pin since hipporag's NV-Embed-v2
+# path was deliberately pinned against exactly this kind of newer-
+# transformers breakage.
+memalpha = ["qwen-agent", "soundfile"]
+# plugins/methods/lmedr/training: upstream's own train_PersonaChat.py (not
+# vendored for inference-only use, see method.py) uses pytorch-ignite for
+# its Engine/Events training loop -- only needed to actually train a new
+# checkpoint, not for method.py's inference path.
+lmedr_train = ["pytorch-ignite", "tensorboard"]
+
+[project.scripts]
+db = "dialogue_benchmarks.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+# `data` is a symlink onto the shared HDD, which holds raw dataset repos (some
+# vendoring their own unrelated test suites, e.g. conversation_chronicles_exp) --
+# never let pytest wander in there.
+testpaths = ["tests"]

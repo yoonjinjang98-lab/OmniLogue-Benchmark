@@ -1,0 +1,20 @@
+{
+  "name": "comperdial",
+  "task_type": "dialogue",
+  "axes": [
+    "persona"
+  ],
+  "synthetic": false,
+  "n_parties": "2",
+  "has_timestamp": false,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": true,
+  "license": "CC-BY-NC-SA 4.0 (Sony)",
+  "url": "https://huggingface.co/datasets/Sony/ComperDial",
+  "tier": "B",
+  "notes": "100 human-human persona-grounded dialogues (CPD challenge 2023, PersonaChat-style persona sentences for both speakers, A and B), plus human 'overall' scores for 10,395 responses from 97 dialogue systems on 15 of them -- the latter is what makes it useful for checking whether bleu/bertscore/persona_consistency track human judgment. The adapter exposes the generation task (next turn of speaker B); the human scores are kept on the conversation object (turn_judgments). Non-commercial license.",
+  "extra_metrics": [
+    "persona_c_score"
+  ]
+}

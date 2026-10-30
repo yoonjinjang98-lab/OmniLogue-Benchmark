@@ -1,0 +1,6 @@
+{
+  "name": "persona_consistency_gpt",
+  "task_type": "dialogue",
+  "default": false,
+  "description": "persona_consistency (C-score: +1 entailed / 0 neutral / -1 contradicts the speaker's persona) with an OpenAI judge (gpt-4o-mini) instead of the local gemma -- identical prompt, separate metric name so cached scores never mix. Paid API, logged to the usage ledger: pass explicitly via --metrics persona_consistency_gpt."
+}

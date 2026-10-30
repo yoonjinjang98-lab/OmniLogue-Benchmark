@@ -1,0 +1,21 @@
+{
+  "name": "msc_longterm",
+  "task_type": "dialogue",
+  "axes": [
+    "long",
+    "persona"
+  ],
+  "synthetic": true,
+  "n_parties": "2",
+  "has_timestamp": false,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": true,
+  "license": "MIT (ParlAI / facebook)",
+  "url": "https://huggingface.co/datasets/nayohan/multi_session_chat",
+  "tier": "A",
+  "notes": "Long-term view of MSC's test split (same raw files, data/raw/msc/): 501 five-session dialogues -> one conversation per target session 2-5 with earlier sessions as memory, Speaker 2's turns generated (LD-Agent / HAHT protocol); per-session breakdown via category.",
+  "extra_metrics": [
+    "persona_c_score"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "groupmembench",
+  "task_type": "qa",
+  "axes": [
+    "long",
+    "persona",
+    "multiparty"
+  ],
+  "synthetic": true,
+  "n_parties": "N",
+  "has_timestamp": true,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": true,
+  "has_persona_sentences": false,
+  "license": "research (UCSB-NLP-Chang / MSR)",
+  "url": "https://github.com/UCSB-NLP-Chang/GroupMemBench",
+  "tier": "A",
+  "notes": "4 domains (Finance/Technology/Healthcare/Manufacturing) synthetic channel logs, role-tagged users, reply_to given; 6 question types incl. asking_user_id (answer can depend on who asks); ships BM25 + dense baselines -- reproduce the 'BM25 matches memory systems' finding here [meta corrected against actual adapter output via scripts/05_dataset_report.py]",
+  "extra_metrics": [
+    "abstention_accuracy"
+  ]
+}

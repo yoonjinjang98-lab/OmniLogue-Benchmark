@@ -1,0 +1,6 @@
+{
+  "name": "memoryos",
+  "description": "Wraps memoryos-pro (BAI-LAB/MemoryOS, \"Memory OS of AI Agent\", EMNLP 2025 Oral, family C, BASELINE_METRIC_PLAN.md §4): hierarchical short/mid/long-term memory built for personal AI assistants, evaluated in its own paper on LoCoMo. Ingests consecutive turn pairs via add_memory(), answers via Retriever.retrieve_context() (semantic search over mid-term session pages + long-term knowledge) feeding a QA prompt. Comparison point alongside mem0/langmem/a_mem for whether a real memory-agent framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary).",
+  "author": "Wnsdnl",
+  "url": "https://github.com/BAI-LAB/MemoryOS"
+}

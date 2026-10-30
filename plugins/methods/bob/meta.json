@@ -1,0 +1,6 @@
+{
+  "name": "bob",
+  "description": "BoB -- BERT Over BERT for Training Persona-based Dialogue Models from Limited Personalized Data (Song, Wang, Zhang, Zhang, Liu; ACL 2021, aclanthology.org/2021.acl-long.14). Wraps https://github.com/songhaoyu/BoB: one BERT encoder feeding TWO BERT decoders -- decoder1 does ordinary autoregressive response generation, decoder2 (BoB's actual contribution) additionally cross-attends to decoder1's hidden states AND the raw persona tokens directly, refining the response for persona consistency; at inference, decoder2's output is the final answer. NOT a prompted-LLM baseline; requires a locally trained checkpoint (checkpoint_path config) -- upstream ships no pretrained weights, only base BERT + a training script to fine-tune your own on ConvAI2 PersonaChat. Apache-2.0 licensed, real LICENSE file present -- no licensing gap this time. See method.py's module docstring for several real upstream generation-code bugs found and fixed at vendor time.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/songhaoyu/BoB"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "ld_agent",
+  "description": "LD-Agent (Li et al., NAACL 2025): model-agnostic long-term dialogue agent -- event memory (per-session LLM summaries keyed by spaCy noun topics, retrieved by noun overlap x time decay), turn-by-turn user/agent persona extraction, and a role-play response generator. Prompts and scoring vendored verbatim from the MIT-licensed repo; LLM calls through llm.complete(), so any --model works (default local gemma). For msc_longterm / conversation_chronicles. Needs the ld_agent extra (spaCy en_core_web_sm).",
+  "author": "Wnsdnl",
+  "url": "https://github.com/leolee99/LD-Agent"
+}

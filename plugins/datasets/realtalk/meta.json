@@ -1,0 +1,18 @@
+{
+  "name": "realtalk",
+  "task_type": "qa",
+  "axes": [
+    "long",
+    "persona"
+  ],
+  "synthetic": false,
+  "n_parties": "2",
+  "has_timestamp": true,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": false,
+  "license": "research (Lee et al. 2025, arXiv 2502.13270; no license file in source repo)",
+  "url": "https://github.com/danny911kr/REALTALK",
+  "tier": "A",
+  "notes": "10 real (not synthetic) 21-day dyadic messaging conversations, 16-21 sessions each, per-session event annotations; 728 memory-probing QA in LoCoMo format (categories 1 multi-hop, 2 temporal, 3 commonsense/world-knowledge -- LoCoMo's 4/5 don't exist here). Fills the 'everything else long-term here is synthetic' gap. Raw: data/raw/realtalk/repo (git clone). Quirk: in Chat_1 speaker labels are handles (Emi/elise) but QA uses real names (Kate/Emily) -- see adapter docstring."
+}

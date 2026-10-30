@@ -1,0 +1,6 @@
+{
+  "name": "llm_select",
+  "description": "Prompted LLM selection baseline for task_type=retrieval (ubuntu_irc response selection, ubuntu_irc_addressee, mpchat NRP): shows the context (and persona, if any) plus the numbered item.candidates and asks the model for the number of the best one. Emits a single pick; recall/MRR give the unpicked candidates their expected random rank. Defaults to the free local google/gemma-4-31B-it.",
+  "author": "Wnsdnl",
+  "url": null
+}

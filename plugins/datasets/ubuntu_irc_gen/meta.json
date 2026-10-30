@@ -1,0 +1,17 @@
+{
+  "name": "ubuntu_irc_gen",
+  "task_type": "dialogue",
+  "axes": [
+    "multiparty"
+  ],
+  "synthetic": false,
+  "n_parties": "N",
+  "has_timestamp": false,
+  "has_gold_addressee": true,
+  "has_gold_reply_to": true,
+  "has_persona_sentences": false,
+  "license": "Ubuntu Chat Corpus (Ouchi & Tsuboi 2016)",
+  "url": "https://github.com/hiroki13/response-ranking",
+  "tier": "A",
+  "notes": "Response-generation view of ubuntu_irc's test split (same raw files, data/raw/ubuntu_irc/; GSN/Hu et al. 2019 format): generate the next message given context + speaker + addressee, the setting HeterMPC/MADNet report BLEU-1~4/METEOR/ROUGE-L on."
+}

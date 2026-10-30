@@ -1,0 +1,6 @@
+{
+  "name": "mem0",
+  "description": "Wraps mem0ai's Memory API (mem0ai/mem0, family C, BASELINE_METRIC_PLAN.md §4): ingests the conversation chunk by chunk via Memory.add() (LLM-based fact extraction/consolidation, not raw storage), then Memory.search() retrieves relevant memories per question. Comparison point for whether a real memory-agent framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary).",
+  "author": "Wnsdnl",
+  "url": "https://github.com/mem0ai/mem0"
+}

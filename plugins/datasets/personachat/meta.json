@@ -1,0 +1,20 @@
+{
+  "name": "personachat",
+  "task_type": "dialogue",
+  "axes": [
+    "persona"
+  ],
+  "synthetic": false,
+  "n_parties": "2",
+  "has_timestamp": false,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": true,
+  "license": "MIT (ParlAI ConvAI2)",
+  "url": "https://huggingface.co/datasets/AlekseyKorshuk/persona-chat",
+  "tier": "A",
+  "notes": "17878/1000 dialogues, 1155/100 personas train/val; origin of the persona-grounded dialogue line [has_gold_addressee corrected to false: dyadic addressee_ids is a deterministic adapter fallback, not a real source annotation -- see scripts/05_dataset_report.py docstring]",
+  "extra_metrics": [
+    "persona_c_score"
+  ]
+}

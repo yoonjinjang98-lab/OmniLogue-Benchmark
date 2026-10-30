@@ -1,0 +1,20 @@
+{
+  "name": "beam",
+  "task_type": "qa",
+  "extra_metrics": [
+    "abstention_accuracy"
+  ],
+  "axes": [
+    "long"
+  ],
+  "synthetic": false,
+  "n_parties": "2",
+  "has_timestamp": true,
+  "has_gold_addressee": false,
+  "has_gold_reply_to": false,
+  "has_persona_sentences": true,
+  "license": "research (Tavakoli et al., ICLR 2026)",
+  "url": "https://github.com/mohammadtavakoli78/BEAM",
+  "tier": "A",
+  "notes": "100K/500K/1M token splits downloaded (10M skipped, Tier C); 10 memory abilities, 2000 human-validated questions [meta corrected against actual adapter output via scripts/05_dataset_report.py]"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "abstention_accuracy",
+  "task_type": "qa",
+  "default": false,
+  "description": "Did the method decline exactly when it should? Unanswerable items (metadata answerable=false, or an empty reference) score 1 if the prediction abstains; answerable items score 1 if it does not. Reports {accuracy, unanswerable_recall, answerable_precision...}. Abstention is detected by keyword (\"not mentioned\", \"no information\", \"cannot answer\", ...). Opt in per dataset via meta.json extra_metrics (longmemeval, groupmembench, molweni, beam)."
+}

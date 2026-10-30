@@ -1,0 +1,6 @@
+{
+  "name": "hypermem",
+  "description": "Wraps HyperMem (EverMind-AI/HyperMem, Apache-2.0, ACL 2026, family C, BASELINE_METRIC_PLAN.md §4): a three-level hypergraph (topic -> episode -> fact) memory architecture with coarse-to-fine top-down retrieval (BM25+dense RRF fusion per layer). Vendored (no PyPI package exists) since upstream ships a 5-stage file-based pipeline rather than a single class -- this method calls each stage's real per-conversation functions directly, chained through a temp directory. Comparison point alongside mem0/langmem/a_mem/memoryos/zep/hipporag for whether a real memory-agent/graph-RAG framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary).",
+  "author": "Wnsdnl",
+  "url": "https://github.com/EverMind-AI/HyperMem"
+}

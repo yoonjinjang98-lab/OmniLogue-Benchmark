@@ -1,0 +1,6 @@
+{
+  "name": "persona_consistency",
+  "task_type": "dialogue",
+  "default": false,
+  "description": "C-score style persona consistency (Madotto et al. 2019): an LLM NLI judge labels the generated turn against the speaker's persona sentences (item.metadata['persona']) as ENTAIL (+1), NEUTRAL (0) or CONTRADICT (-1). One local-LLM call per item, so not a default metric -- pass --metrics persona_consistency."
+}

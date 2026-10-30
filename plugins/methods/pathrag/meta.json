@@ -1,0 +1,6 @@
+{
+  "name": "pathrag",
+  "description": "Wraps PathRAG (BUPT-GAMMA/PathRAG, family C, BASELINE_METRIC_PLAN.md §4): LLM-driven entity/relationship extraction into a knowledge graph, answered by retrieving and pruning relational *paths* between query-relevant entities (not just 1-hop neighbors) before generating a response. Comparison point alongside mem0/langmem/a_mem/memoryos/zep/hipporag/hypermem/graphrag/lightrag/hypergraphrag for whether a graph-RAG framework beats plain RAG (bm25_rag/dense_rag) or a rolling summary (running_summary). No LICENSE file exists in this repo despite the README's MIT claim -- used here for internal reproduction only, same basis already agreed for plugins/methods/groupmembench_bm25 and plugins/methods/dialsim_bm25's datasets (see BASELINE_METRIC_PLAN.md).",
+  "author": "Wnsdnl",
+  "url": "https://github.com/BUPT-GAMMA/PathRAG"
+}

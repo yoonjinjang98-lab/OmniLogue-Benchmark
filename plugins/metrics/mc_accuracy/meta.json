@@ -1,0 +1,6 @@
+{
+  "name": "mc_accuracy",
+  "task_type": "qa",
+  "default": false,
+  "description": "Multiple-choice accuracy over item.options (personamem). The prediction may be an option letter ('B', '(b)') or the option's text; free text is matched to the closest option by token F1. The reference is the gold option's text. Not a default qa metric (most qa datasets have no options) -- datasets opt in via meta.json extra_metrics."
+}

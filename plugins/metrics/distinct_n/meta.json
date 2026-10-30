@@ -1,0 +1,5 @@
+{
+  "name": "distinct_n",
+  "task_type": "dialogue",
+  "description": "Response diversity (Li et al. 2016): unique n-grams / total n-grams. Per-item score is distinct-2 within one response; the reported number is corpus-level {distinct_1, distinct_2} over all predictions, which is the standard formulation."
+}

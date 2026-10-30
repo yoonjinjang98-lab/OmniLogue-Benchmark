@@ -1,0 +1,6 @@
+{
+  "name": "dp_previous_edu",
+  "description": "Heuristic discourse-parsing baseline (molweni_dp): attaches every EDU to the immediately preceding one with the most frequent relation label (Comment). The standard 'chain' lower bound for multi-party dialogue discourse parsing; no model.",
+  "author": "Wnsdnl",
+  "url": null
+}

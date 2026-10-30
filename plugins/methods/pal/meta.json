@@ -1,0 +1,6 @@
+{
+  "name": "pal",
+  "description": "PAL (Persona-Aware Alignment, arXiv 2511.10215): Llama-3.1-8B-Instruct with LoRA SFT on a persona-selection + generation mixture, then DPO against its own persona-free responses; inference selects the relevant persona, then generates with it highlighted (beam 3, <=40 tokens). PAL's prompts vendored verbatim; train.py reproduces the two-stage recipe (persona-relevance labels derived with the C-score NLI classifier -- PAL's labelled files aren't released). For personachat. Needs the pal extra and a GPU.",
+  "author": "Wnsdnl",
+  "url": "https://github.com/kylokano/PAL"
+}

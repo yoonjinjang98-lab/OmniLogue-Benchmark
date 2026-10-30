@@ -1,0 +1,6 @@
+{
+  "name": "running_summary",
+  "description": "MemoryBank-style rolling summary baseline (family B, BASELINE_METRIC_PLAN.md §4): processes the conversation one session (or fixed-size turn window) at a time, updating a single running summary via one LLM call per chunk, then answers questions from just the final summary instead of the raw transcript or a retrieval index. Stays usable on conversations too long for any context window, at the cost of whatever summarization drops.",
+  "author": "Wnsdnl",
+  "url": null
+}

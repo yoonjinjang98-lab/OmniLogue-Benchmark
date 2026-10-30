@@ -1,0 +1,6 @@
+{
+  "name": "llm_dp",
+  "description": "Prompted LLM discourse parser (molweni_dp): shows the numbered EDUs and the relation label set, asks for the full [x, y, relation] edge list as JSON; scored by discourse_relation_f1. Falls back to the dp_previous_edu chain for any EDU the model leaves unattached, so every EDU gets exactly one parent. Defaults to the free local google/gemma-4-31B-it.",
+  "author": "Wnsdnl",
+  "url": null
+}

@@ -1,0 +1,5 @@
+{
+  "name": "meteor",
+  "task_type": "dialogue",
+  "description": "METEOR via nltk.translate.meteor_score (unigram precision/recall with synonym matching against WordNet). Range [0, 1]. Requires the nltk 'wordnet', 'omw-1.4' and 'punkt'/'punkt_tab' corpora to be downloaded locally (~/nltk_data on this machine)."
+}
